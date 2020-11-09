@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="obj.name">
+        <div>{{obj.name}}</div>
+        <div>{{defaultVal}}</div>
+        <div>
+            <span>
+                {{obj.name}}
+            </span>
+        </div>
+    </div>
+    <script src="./mvvm.js"></script>
+    <script>
+        let res = new Vue({
+            el: '#box',
+            data: {
+                defaultVal: '默认值',
+                obj: {
+                    name: 'YSY'
+                }
+            }
+        })
+        // console.log('res', res)
+
+        // let obj = {
+        //     name: 'renyl'
+        // };
+
+
+
+
+        // 该方法是给一个对象添加一个可观察的属性（在获取该属性的时候需要调用属性的get方法-->切记属性值完全由get方法的返回值来决定）
+        // 在对该属性进行重新赋值的时候会调用set方法，并且会把新值以参数的形式传递进来
+
+
+        // Object.defineProperty(obj, 'age', {
+        //     get() {
+        //         console.log(2)
+        //         return 1
+        //     },
+        //     set(newVal) {
+        //         console.log('set', newVal)
+        //     }
+        // })
+        // obj.age = 20;
+        // console.log(obj, 'obj')
+    </script>
+</body>
+</html>
